@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-Some text
+
+
+
+
+
+
 {% with messages = get_flashed_messages() %}
     {% if messages %}
         <div class="alert alert-warning" role="alert">
@@ -11,3 +16,4 @@ Some text
     {% endif %}
 {% endwith %}
 {% endblock %}
+

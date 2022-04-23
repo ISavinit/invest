@@ -1,19 +1,14 @@
-from flask import url_for, render_template, flash
-from flask_login import current_user, login_user, logout_user
-from werkzeug.utils import redirect
+from flask import render_template, Blueprint
+from investapp.db import db
+# from investapp.portal.models import Account
 
-from investapp import db
-from investapp.user.models import User
-from investapp.user.forms import LoginForm, RegistrationForm
-
-from flask import Blueprint
-
-blueprint = Blueprint('portal', __name__, url_prefix='/')
+blueprint = Blueprint('portal', __name__)
 
 
 @blueprint.route('/')
-def portal():
+def index():
     title = "Инвестиционный портфель"
+    # acc_list = Account.query.all()
     return render_template('portal/index.html', page_title=title)
 
 
